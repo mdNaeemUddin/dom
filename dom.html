@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to DOM</h1>
+    </header>
+    <main>
+        <section>
+            <h1>Awesome dom explore : </h1>
+        <ul>
+            <li>list - 1</li>
+            <li>list - 2</li>
+            <li>list - 3</li>
+        </ul>
+        </section>
+        <section class="fruits">
+            <h1>Fruits I like</h1>
+            <ul>
+                <li>Fuits Mango - 1</li>
+                <li>Fuits Like - 2</li>
+                <li>Fuits Like - 3</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Place I want to visit : </h1>
+            <ul>
+                <li class="important-places">Place - 1</li>
+                <li class="important-places">Place - 2</li>
+                <li class="important-places">Place - 3</li>
+            </ul>
+        </section>
+        <section >
+            <h1 id="fav-book">Book I want to Read : </h1>
+            <ul id="book-list">
+                <li>Book _ 1</li>
+                <li>Book _ 2</li>
+                <li>Book _ 3</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="dom.js"></script>
+    <script>
+        console.log("Hello Inernal DOM");
+
+        const student = {
+            name: "Md. Naeem Uddin",
+            age: 25,
+            roll: 63
+        }
+
+        const liCollection = document.getElementsByTagName('li');
+        console.log(liCollection);
+
+        for(const li of liCollection){
+            console.log(li.innerText);
+        }
+
+        // document.getElementsByTagName, innerText
+
+        const allHeading = document.getElementsByTagName('h1');
+        
+        for(const head of allHeading){
+            console.log(head.innerText);
+        }
+
+        const foodLike = document.getElementById('food');
+        console.log(foodLike.innerText);
+
+        const places = document.getElementsByClassName('important-places');
+
+        for(const place of places){
+            console.log(place.innerText);
+        }
+
+        // querySelector() , querySelectorAll()
+
+        const favBook = document.querySelector('#fav-book');
+        console.log(favBook.innerText);
+
+        document.getElementById('fav-book').style.color = 'red';
+    </script>
+</body>
+
+</html>
