@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Explore Event Delegate : </h1>
+        <section>
+            <ul id="list-container">
+                <li class="item">list - 1</li>
+                <li class="item">list - 2</li>
+                <li class="item">list - 3</li>
+                <li class="item">list - 4</li>
+                <li class="item">list - 5</li>
+                <li class="item">list - 6</li>
+            </ul>
+            <button id="btn-add-item">Add Item</button>
+        </section>
+    </main>
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(let item of items){
+        //     item.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('list-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('btn-add-item').addEventListener('click', function(){
+            const listContainer = document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText = 'bran new item added';
+            li.classList.add('item');
+            listContainer.appendChild(li);
+
+        })
+    </script>
+</body>
+</html>
